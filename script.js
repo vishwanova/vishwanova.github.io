@@ -89,3 +89,40 @@ document.querySelectorAll("[data-mode-switch]").forEach((switcher) => {
     });
   });
 });
+
+document.querySelectorAll("[data-typed-from][data-typed-to]").forEach((element) => {
+  const fromText = element.getAttribute("data-typed-from") || "";
+  const toText = element.getAttribute("data-typed-to") || "";
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduceMotion) {
+    element.textContent = toText || fromText;
+    return;
+  }
+
+  element.textContent = fromText;
+  let current = fromText;
+
+  const backspace = () => {
+    if (current.length === 0) {
+      window.setTimeout(typeForward, 180);
+      return;
+    }
+
+    current = current.slice(0, -1);
+    element.textContent = current;
+    window.setTimeout(backspace, 78);
+  };
+
+  let typeIndex = 0;
+  const typeForward = () => {
+    typeIndex += 1;
+    element.textContent = toText.slice(0, typeIndex);
+
+    if (typeIndex < toText.length) {
+      window.setTimeout(typeForward, 108);
+    }
+  };
+
+  window.setTimeout(backspace, 460);
+});
