@@ -315,10 +315,10 @@ button:hover,
 .hero-copy h1,
 .page-hero h1 {
   margin: 0;
-  font-size: clamp(4.2rem, 8vw, 7rem);
-  line-height: 0.84;
+  font-size: clamp(3rem, 5.6vw, 4.8rem);
+  line-height: 0.9;
   text-transform: uppercase;
-  max-width: 10ch;
+  max-width: 12ch;
   text-shadow: 0 0 24px rgba(47, 145, 255, 0.18);
 }
 
@@ -332,13 +332,13 @@ button:hover,
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1.22fr);
   gap: 16px;
   align-items: stretch;
 }
 
 .portrait-panel {
-  min-height: 340px;
+  min-height: 300px;
   border: 1px solid rgba(70, 108, 147, 0.54);
   border-radius: 16px;
   background:
@@ -356,7 +356,7 @@ button:hover,
   position: relative;
   display: grid;
   place-items: center;
-  padding: 22px;
+  padding: 18px;
 }
 
 .portrait-display::before {
@@ -378,7 +378,7 @@ button:hover,
 .portrait-placeholder {
   position: relative;
   z-index: 1;
-  width: min(100%, 290px);
+  width: min(100%, 240px);
   aspect-ratio: 4 / 5;
   border-radius: 18px;
   border: 1px solid rgba(96, 145, 194, 0.5);
@@ -435,9 +435,11 @@ button:hover,
 .mini-card strong {
   display: block;
   margin-top: 6px;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--ink);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .hero-actions,
@@ -1015,7 +1017,7 @@ button:hover,
 
   .hero-copy h1,
   .page-hero h1 {
-    font-size: clamp(3.4rem, 18vw, 5.4rem);
+    font-size: clamp(2.7rem, 12vw, 4rem);
   }
 
   .hero-actions,
