@@ -76,10 +76,11 @@ document.querySelectorAll("[data-mode-switch]").forEach((switcher) => {
       bloom.style.setProperty("--bloom-x", `${centerX}px`);
       bloom.style.setProperty("--bloom-y", `${centerY}px`);
       bloom.style.setProperty("--bloom-size", `${bloomSize}px`);
-      bloom.classList.remove("is-active");
+      bloom.classList.remove("is-active", "to-personal", "to-professional");
       void bloom.offsetWidth;
 
       switcher.classList.add("is-animating");
+      bloom.classList.add(nextMode === "personal" ? "to-personal" : "to-professional");
       bloom.classList.add("is-active");
 
       window.setTimeout(() => {
