@@ -1,10 +1,263 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My First Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VishwaNova | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=League+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <p>Obama Have Dih!!!</p>
+  <div class="grid-mask" aria-hidden="true"></div>
+
+  <div class="shell">
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-copy">
+          <strong>VishwaNova</strong>
+          <span>Portfolio Interface</span>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" data-page="index.html">Home</a>
+        <a href="projects.html" data-page="projects.html">Projects</a>
+        <a href="research.html" data-page="research.html">Research</a>
+        <a href="contact.html" data-page="contact.html">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="button-link soft" href="projects.html">See Work</a>
+        <a class="button-link secondary" href="contact.html">Get In Touch</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-layout">
+        <aside class="portrait-panel">
+          <div class="portrait-display">
+            <div class="portrait-placeholder">
+              <span>Add your portrait, lab photo, or profile image here later</span>
+            </div>
+          </div>
+          <div class="portrait-meta">
+            <div>
+              <strong>Image Slot</strong>
+              <div class="micro-label">Ready for a future portrait or project visual</div>
+            </div>
+            <div class="chip">Placeholder</div>
+          </div>
+        </aside>
+
+        <div class="hero-copy">
+          <div>
+            <div class="eyebrow">Portfolio Overview</div>
+            <h1>Parikshit Vishwadnya</h1>
+            <p>
+              This site is structured as a dark, full-screen portfolio interface for projects, research interests,
+              and contact information. The landing page introduces the work and routes visitors into dedicated pages.
+            </p>
+          </div>
+
+          <div class="hero-meta">
+            <div class="metric-chip">
+              <div class="micro-label">Focus</div>
+              <strong>Projects</strong>
+            </div>
+            <div class="metric-chip">
+              <div class="micro-label">Track</div>
+              <strong>Research</strong>
+            </div>
+            <div class="metric-chip">
+              <div class="micro-label">Reach</div>
+              <strong>Contact</strong>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button-link primary" href="projects.html">Browse Projects</a>
+            <a class="button-link secondary" href="research.html">Research Interests</a>
+            <a class="button-link soft" href="contact.html">Contact Details</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-viz" aria-label="Animated interface visualization">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="orbit orbit-c"></div>
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+        <div class="satellite sat-a"></div>
+        <div class="satellite sat-b"></div>
+        <div class="satellite sat-c"></div>
+        <div class="pulse-core"></div>
+        <div class="telemetry-tag tag-1">Layered Visual</div>
+        <div class="telemetry-tag tag-2">Animated Rings</div>
+        <div class="telemetry-tag tag-3">Profile Landing</div>
+        <div class="telemetry-tag tag-4">Responsive Hero</div>
+        <div class="hero-stars" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="hero-stats">
+          <span>Portfolio Home</span>
+          <span>Visual Identity</span>
+          <span>Navigation Hub</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="dashboard">
+      <div class="stack">
+        <article class="panel">
+          <div class="panel-kicker">About</div>
+          <h2>What This Site Holds</h2>
+          <p>
+            The portfolio is split into focused sections so visitors can quickly move between your work, your
+            current research interests, and the best way to reach you.
+          </p>
+          <div class="three-col" style="margin-top: 18px;">
+            <div class="mini-card">
+              <div class="micro-label">Projects Page</div>
+              <strong>Case Studies</strong>
+            </div>
+            <div class="mini-card">
+              <div class="micro-label">Research Page</div>
+              <strong>Interests</strong>
+            </div>
+            <div class="mini-card">
+              <div class="micro-label">Contact Page</div>
+              <strong>Details</strong>
+            </div>
+          </div>
+        </article>
+
+        <div class="two-col">
+          <article class="panel">
+            <div class="panel-kicker">Projects</div>
+            <h2>Selected Work</h2>
+            <p>Give each project its own summary, stack, role, and outcome instead of keeping everything on one page.</p>
+            <div class="chip-row" style="margin-top: 14px;">
+              <span class="chip">Web</span>
+              <span class="chip">Data</span>
+              <span class="chip">Tools</span>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-kicker">Research</div>
+            <h2>Interests</h2>
+            <p>Use a dedicated page to explain themes you care about, current directions, and topics you want to explore.</p>
+            <div class="chip-row" style="margin-top: 14px;">
+              <span class="chip">Topics</span>
+              <span class="chip">Methods</span>
+              <span class="chip">Reading</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="stack">
+        <article class="panel">
+          <div class="panel-kicker">Quick Links</div>
+          <h2>Navigation</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">01</div>
+              <div class="timeline-copy">
+                <strong>Projects</strong>
+                <span class="micro-label">Portfolio entries, stacks, links, and outcomes</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">02</div>
+              <div class="timeline-copy">
+                <strong>Research</strong>
+                <span class="micro-label">Interests, questions, and current areas of attention</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">03</div>
+              <div class="timeline-copy">
+                <strong>Contact</strong>
+                <span class="micro-label">Email, profiles, and availability details</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-kicker">Next Step</div>
+          <h2>Content To Replace</h2>
+          <div class="list-row">
+            <div>
+              <strong>Portrait box</strong>
+              <span class="micro-label">Swap the placeholder with your image when ready</span>
+            </div>
+          </div>
+          <div class="list-row">
+            <div>
+              <strong>Project cards</strong>
+              <span class="micro-label">Replace sample text with real project descriptions</span>
+            </div>
+          </div>
+          <div class="list-row">
+            <div>
+              <strong>Contact details</strong>
+              <span class="micro-label">Update the sample links to your actual info</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="module-strip">
+      <article class="panel">
+        <div class="panel-kicker">Structure</div>
+        <div class="big-value">
+          <div class="value-emphasis">04</div>
+          <span>pages</span>
+        </div>
+        <p>Home, projects, research, and contact are now separate pages instead of one long landing file.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-kicker">Image Slot</div>
+        <div class="big-value">
+          <div class="value-emphasis">01</div>
+          <span>box</span>
+        </div>
+        <p>The hero now includes a dedicated image area that can hold your portrait or another strong visual.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-kicker">Shared Style</div>
+        <div class="big-value">
+          <div class="value-emphasis">One</div>
+          <span>system</span>
+        </div>
+        <p>The full visual language now lives in a reusable stylesheet for the whole portfolio.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-kicker">Editing</div>
+        <div class="big-value">
+          <div class="value-emphasis">Easy</div>
+          <span>swap</span>
+        </div>
+        <p>Content is now separated cleanly enough to replace page copy without disturbing the visual framework.</p>
+      </article>
+    </section>
+
+    <div class="footer-note">
+      <strong>Portfolio note:</strong> The structure is now ready for your real image, real project entries, and real contact information.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
