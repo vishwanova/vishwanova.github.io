@@ -66,6 +66,7 @@ body.light {
   --viz-orbit: rgba(93, 124, 255, 0.22);
   --viz-orbit-2: rgba(93, 124, 255, 0.16);
   --viz-orbit-3: rgba(124, 92, 255, 0.18);
+  font-family: "Schoolbell", "IBM Plex Sans", sans-serif;
 }
 
 * {
@@ -393,6 +394,39 @@ body.light .nav-links a.is-active {
   background: rgba(255, 255, 255, 0.82);
 }
 
+body.light .nav {
+  justify-content: center;
+  padding: 20px 24px 18px;
+  text-align: center;
+}
+
+body.light .brand {
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+body.light .brand-mark {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    0 0 24px rgba(93, 124, 255, 0.14);
+}
+
+body.light .brand-copy strong {
+  font-size: 1.35rem;
+}
+
+body.light .brand-copy span,
+body.light .eyebrow,
+body.light .panel-kicker,
+body.light .micro-label {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 .mode-switch {
   position: relative;
   display: inline-grid;
@@ -643,6 +677,34 @@ body.light .page-hero .eyebrow {
   color: var(--muted);
 }
 
+body.light .hero {
+  grid-template-columns: 1fr;
+  gap: 28px;
+  justify-items: center;
+  text-align: center;
+}
+
+body.light .hero-copy {
+  align-items: center;
+  gap: 18px;
+}
+
+body.light .hero-copy h1,
+body.light .page-hero h1 {
+  font-size: clamp(3.4rem, 6.8vw, 5.6rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  max-width: 11ch;
+  text-shadow: 0 0 20px rgba(124, 92, 255, 0.12);
+}
+
+body.light .hero-subtitle {
+  max-width: 42ch;
+  font-size: 1.08rem;
+  line-height: 1.95;
+}
+
 .hero-copy h1,
 .page-hero h1 {
   margin: 0;
@@ -814,6 +876,153 @@ body.light .panel {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.75),
     0 10px 30px rgba(25, 40, 70, 0.1);
+}
+
+body.light .panel h2 {
+  font-family: "Walter Turncoat", "Schoolbell", cursive;
+  font-size: 2.15rem;
+  line-height: 1.02;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+body.light .panel p,
+body.light .footer-note,
+body.light .hero-subtitle {
+  font-family: "Schoolbell", cursive;
+}
+
+body.light .two-col {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+body.light .footer-note {
+  justify-content: center;
+  text-align: center;
+}
+
+body.personal-page .nav {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: min(680px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 18px;
+  padding-bottom: 16px;
+}
+
+body.personal-page .brand {
+  margin: 0;
+}
+
+body.personal-page .personal-links {
+  justify-content: center;
+  gap: 12px;
+}
+
+body.personal-page .personal-links a {
+  min-width: 112px;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+body.personal-page .personal-hero {
+  min-height: calc(100vh - 220px);
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: start;
+  padding-top: 64px;
+  padding-bottom: 40px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+body.personal-page .personal-copy {
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  max-width: 740px;
+}
+
+body.personal-page .personal-intro {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+body.personal-page .personal-copy h1 {
+  font-size: clamp(4.6rem, 10vw, 7.8rem);
+  line-height: 0.88;
+  max-width: none;
+}
+
+body.personal-page .personal-trait {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+  line-height: 1.5;
+  color: var(--ink);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin: 6px 0 8px;
+}
+
+body.personal-page .personal-letter {
+  margin-top: 14px;
+  padding-inline: 22px;
+  background: linear-gradient(135deg, #7c5cff, #5d7cff);
+  color: #fff;
+  border: 1px solid rgba(124, 92, 255, 0.18);
+  box-shadow: 0 0 18px rgba(124, 92, 255, 0.16);
+}
+
+body.personal-page .two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1040px;
+  margin-top: 8px;
+}
+
+body.personal-page .panel {
+  border-radius: 22px;
+}
+
+body.personal-page .panel::before,
+body.personal-page .panel::after {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  body.personal-page .personal-hero {
+    min-height: auto;
+  }
+
+  body.personal-page .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  body.personal-page .personal-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body.personal-page .personal-links a {
+    min-width: 0;
+  }
+
+  body.personal-page .personal-copy {
+    align-items: center;
+    text-align: center;
+  }
+
+  body.personal-page .personal-letter {
+    width: 100%;
+  }
 }
 
 .metric-chip strong,
