@@ -1,26 +1,10 @@
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
-const THEME_KEY = "vishwnova-theme";
 
 document.querySelectorAll("[data-page]").forEach((link) => {
   if (link.getAttribute("data-page") === currentPage) {
     link.classList.add("is-active");
   }
 });
-
-const applyThemeSelection = (theme) => {
-  document.body.dataset.theme = theme;
-
-  document.querySelectorAll("[data-mode-switch]").forEach((switcher) => {
-    switcher.querySelectorAll(".mode-option").forEach((option) => {
-      option.classList.toggle("is-selected", option.dataset.mode === theme);
-      option.setAttribute("aria-pressed", String(option.dataset.mode === theme));
-    });
-  });
-};
-
-const storedTheme = localStorage.getItem(THEME_KEY);
-const initialTheme = storedTheme === "professional" ? "professional" : "personal";
-applyThemeSelection(initialTheme);
 
 const glow = document.createElement("div");
 glow.className = "cursor-glow";
@@ -68,11 +52,18 @@ document.addEventListener("pointerleave", () => {
 
 document.querySelectorAll("[data-mode-switch]").forEach((switcher) => {
   const options = switcher.querySelectorAll(".mode-option");
+  const activeMode = document.body.classList.contains("light") ? "personal" : "professional";
+
+  options.forEach((option) => {
+    const isSelected = option.dataset.mode === activeMode;
+    option.classList.toggle("is-selected", isSelected);
+    option.setAttribute("aria-pressed", String(isSelected));
+  });
 
   options.forEach((option) => {
     option.addEventListener("click", () => {
-      const nextTheme = option.dataset.mode;
-      if (document.body.dataset.theme === nextTheme) {
+      const nextMode = option.dataset.mode;
+      if (nextMode === activeMode) {
         return;
       }
 
@@ -80,6 +71,7 @@ document.querySelectorAll("[data-mode-switch]").forEach((switcher) => {
       const centerX = bounds.left + bounds.width / 2;
       const centerY = bounds.top + bounds.height / 2;
       const bloomSize = Math.hypot(window.innerWidth, window.innerHeight) * 2.2;
+      const target = nextMode === "personal" ? "personal.html" : "index.html";
 
       bloom.style.setProperty("--bloom-x", `${centerX}px`);
       bloom.style.setProperty("--bloom-y", `${centerY}px`);
@@ -90,12 +82,9 @@ document.querySelectorAll("[data-mode-switch]").forEach((switcher) => {
       switcher.classList.add("is-animating");
       bloom.classList.add("is-active");
 
-      localStorage.setItem(THEME_KEY, nextTheme);
-      applyThemeSelection(nextTheme);
-
       window.setTimeout(() => {
-        switcher.classList.remove("is-animating");
-      }, 950);
+        window.location.href = target;
+      }, 720);
     });
   });
 });
